@@ -2,16 +2,25 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
+import keras
 
 
 
 
 
+CODE_SIZE = 256
+IMG_SHAPE = (36, 36, 3)
+
+def sample_noise_batch(bsize):
+    return np.random.normal(size=(bsize, CODE_SIZE)).astype('float32')
 
 
 
-
-
+def generate_face(nb):
+    generator = keras.models.load_model('./generator',compile=False)
+    image_list = generator.predict(sample_noise_batch(bsize=nb))
+    image_list = image_list.clip(0,255)
+    return [image.reshape(IMG_SHAPE) for image in image_list]
 
 
 
@@ -50,13 +59,20 @@ st.markdown("To train our Discriminator we will use as real images of people dow
 
 st.subheader("Discriminator")
 
+st.write("TODO")
 
 
 st.subheader("Generator")
 
+st.write("TODO")
+
+st.header("Demo")
 
 if st.button('Generate Face'):
     if nb_faces >1:
         st.write('New {} faces generated'.format(nb_faces))
     else:
         st.write('New face generated')
+    image_list = generate_face(nb_faces)
+    for index, image in enumerate(image_list):
+        st.image(image,width=200,caption="Face {} ".format(index))
