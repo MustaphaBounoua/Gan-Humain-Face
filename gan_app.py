@@ -4,7 +4,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import keras
 import tensorflow as tf
-
+from PIL import Image
 
 
 
@@ -22,7 +22,7 @@ def generate_face(nb):
     image_list = image_list.clip(0,255)
     return [image.reshape(IMG_SHAPE) for image in image_list]
 
-
+ 
 
 nb_faces = st.sidebar.slider("Select Number of Faces to generate",1,6,value=1)
 
@@ -75,4 +75,4 @@ if st.button('Generate Face'):
         st.write('New face generated')
     image_list = generate_face(nb_faces)
     for index, image in enumerate(image_list):
-        st.image(image,width=200,caption="Face {} ".format(index))
+        st.image(image,width=200,clamp=True,caption="Face {} ".format(index))
