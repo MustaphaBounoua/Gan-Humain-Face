@@ -1,6 +1,7 @@
+tensorflow==2.4.1
+numpy==1.19.2
 streamlit==0.75.0
-Keras==2.4.3
 opencv_python==4.5.1.48
 pandas==1.1.3
-numpy==1.19.2
 matplotlib==3.3.2
+Keras==2.4.3
