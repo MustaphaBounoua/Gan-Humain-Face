@@ -16,7 +16,7 @@ def sample_noise_batch(bsize):
 
 
 def generate_face(nb):
-    generator = tf.keras.models.load_model('./generator',compile=False)
+    generator = tf.keras.models.load_model('./generator.h5',compile=False)
     image_list = generator.predict(sample_noise_batch(bsize=nb))
     image_list = image_list.clip(0,255)
     return [image.reshape(IMG_SHAPE) for image in image_list]
