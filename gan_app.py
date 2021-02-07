@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
-import keras
 import tensorflow as tf
 from PIL import Image
 
@@ -17,7 +16,7 @@ def sample_noise_batch(bsize):
 
 
 def generate_face(nb):
-    generator = keras.models.load_model('./generator',compile=False)
+    generator = tf.keras.models.load_model('./generator',compile=False)
     image_list = generator.predict(sample_noise_batch(bsize=nb))
     image_list = image_list.clip(0,255)
     return [image.reshape(IMG_SHAPE) for image in image_list]
