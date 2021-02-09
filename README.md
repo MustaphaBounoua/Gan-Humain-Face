@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Gan-Human-Face
 Generating human faces with Adversarial Networks
 
@@ -7,7 +6,6 @@ A generative adversarial network is a class of machine learning frameworks desig
 
 
 Generative adversarial networks (GANs) are algorithmic architectures that use two neural networks, pitting one against the other (thus the “adversarial”) in order to generate new, synthetic instances of data that can pass for real data. They are used widely in image ,video  and voice generation.
-=======
 # Human Face Generator using GANs
 
 A generative adversarial network is a class of machine learning frameworks designed by Ian Goodfellow and his colleagues in 2014.
@@ -35,4 +33,3 @@ Recommended execution env : Kaggle using GPU mode  [How ?](https://www.kaggle.co
 # Demo
 
 The streamlit app is a demonstrator which allows to visualize the results [Demo] (https://gan-face-generator.herokuapp.com/)
->>>>>>> origin/kaggle
