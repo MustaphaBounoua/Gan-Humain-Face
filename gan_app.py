@@ -16,7 +16,11 @@ def sample_noise_batch(bsize):
 
 
 def generate_face(nb):
+<<<<<<< HEAD
     generator = tf.keras.models.load_model('./generator',compile=False)
+=======
+    generator = tf.keras.models.load_model('./generator.h5',compile=False)
+>>>>>>> origin/kaggle
     image_list = generator.predict(sample_noise_batch(bsize=nb))
     image_list = image_list.clip(0,255)
     return [image.reshape(IMG_SHAPE) for image in image_list]
@@ -35,8 +39,16 @@ st.markdown(" Here’s the full  [code] (https://github.com/MustaphaBounoua/Gan-
 
 st.header("Generative Adversarial Networks")
 
+<<<<<<< HEAD
 st.markdown("A generative adversarial network is a class of machine learning frameworks designed by Ian Goodfellow and his colleagues in 2014  [Paper](https://papers.nips.cc/paper/2014/file/5ca3e9b122f61f8f06494c97b1afccf3-Paper.pdf).")
 st.markdown("Generative adversarial networks (GANs) are algorithmic architectures that use two neural networks, pitting one against the other (thus the “adversarial”) in order to generate new, synthetic instances of data that can pass for real data. \
+=======
+st.markdown("A generative adversarial network is a class of machine learning frameworks designed by Ian Goodfellow and his colleagues \
+            in 2014  [Paper](https://papers.nips.cc/paper/2014/file/5ca3e9b122f61f8f06494c97b1afccf3-Paper.pdf).")
+st.markdown("Generative adversarial networks (GANs) are algorithmic \
+    architectures that use two neural networks, pitting one against the other \
+            (thus the “adversarial”) in order to generate new, synthetic instances of data that can pass for real data. \
+>>>>>>> origin/kaggle
     They are used widely in image ,video  and voice generation.")
 
 st.markdown("The generator learns to generate plausible data. The generated instances become negative training examples for the discriminator.")

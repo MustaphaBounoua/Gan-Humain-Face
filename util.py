@@ -2,8 +2,17 @@ import numpy as np
 import os
 import cv2
 import pandas as pd
+<<<<<<< HEAD
 import tarfile
 
+=======
+import shutil
+import requests
+import time
+from functools import wraps
+import traceback
+from tqdm import tqdm
+>>>>>>> origin/kaggle
 
 ATTRS_NAME = "./data/lfw_attributes.txt"  # http://www.cs.columbia.edu/CAVE/databases/pubfig/download/lfw_attributes.txt
 IMAGES_NAME = "./data/lfw-deepfunneled.tgz"  # http://vis-www.cs.umass.edu/lfw/lfw-deepfunneled.tgz
@@ -13,7 +22,10 @@ RAW_IMAGES_NAME = "./data/lfw.tgz"  # http://vis-www.cs.umass.edu/lfw/lfw.tgz
 
 
 def download_files():
+<<<<<<< HEAD
     import os 
+=======
+>>>>>>> origin/kaggle
 
     FOLDER_DATA_RAW = "./data/" 
     FOLDER_MODEL="./model/"
@@ -89,6 +101,7 @@ def load_lfw_dataset(
 
 
 
+<<<<<<< HEAD
 # https://www.saltycrane.com/blog/2009/11/trying-out-retry-decorator-python/
 def retry(ExceptionToCheck, tries=4, delay=3, backoff=2):
     def deco_retry(f):
@@ -139,3 +152,11 @@ def download_file(url, file_path):
             os.remove(file_path)
     if incomplete_download:
         raise Exception("Incomplete download")
+=======
+
+
+def download_file(url, file_path):
+    r = requests.get(url, allow_redirects=True)
+    open(file_path, 'wb').write(r.content)
+    
+>>>>>>> origin/kaggle
